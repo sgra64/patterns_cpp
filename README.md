@@ -1,3 +1,3 @@
-# patterns_cpp
-Design Patter examples for C++.
+# Design Patter examples for C++
+Use for reference:
 https://en.wikibooks.org/wiki/C++_Programming/Code/Design_Patterns
