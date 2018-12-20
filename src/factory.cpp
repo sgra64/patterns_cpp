@@ -5,15 +5,15 @@ Eatable::~Eatable() {}
 
 FoodFactory FoodFactory::_singletonFactoryInstance;
 
-Pizza& FoodFactory::getPizza( string name, int diameter ) {
+Pizza& FoodFactory::createPizza( string name, int diameter ) {
     return *new Pizza( name, diameter );
 }
 
-Hamburger& FoodFactory::getHamburger( string name, bool vegan, int calories ) {
+Hamburger& FoodFactory::createHamburger( string name, bool vegan, int calories ) {
     return *new Hamburger( name, vegan, calories );
 }
 
-Eatable& FoodFactory::getEatable( string name ) {
+Eatable& FoodFactory::createEatable( string name ) {
     if( name.find( "izza" ) != string::npos ) {
         return *new Pizza( name );
     }

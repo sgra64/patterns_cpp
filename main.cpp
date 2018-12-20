@@ -35,16 +35,16 @@ void factoryPlayground() {
     FoodFactory& foodFactory = FoodFactory::getInstance();
     //Pizza *p0 = new Pizza( "Margarita", 30 );   // not allowed
 
-    Pizza& p1 = foodFactory.getPizza( "Margarita", 30 );
-    Pizza& p2 = foodFactory.getPizza( "Hawaii", 60 );
-    Hamburger& h1 = foodFactory.getHamburger( "BicMac", false, 1800 );
+    Pizza& p1 = foodFactory.createPizza( "Margarita", 30 );
+    Pizza& p2 = foodFactory.createPizza( "Hawaii", 60 );
+    Hamburger& h1 = foodFactory.createHamburger( "BicMac", false, 1800 );
 
-    Eatable& e1 = foodFactory.getHamburger( "Whopper", false, 1300 );
-    Eatable& e2 = foodFactory.getEatable( "Pizza Four Seasons" );
-    Eatable& e3 = foodFactory.getEatable( "CheeseBurger" );
-    Hamburger& h2 = (Hamburger&)foodFactory.getEatable( "CheeseBurger" );
-    Hamburger& h3 = static_cast<Hamburger&>( foodFactory.getEatable( "Pizza Nutella" ) );
-    Hamburger& h4 = dynamic_cast<Hamburger&>( foodFactory.getEatable( "Hamburger Nutella" ) );
+    Eatable& e1 = foodFactory.createHamburger( "Whopper", false, 1300 );
+    Eatable& e2 = foodFactory.createEatable( "Pizza Four Seasons" );
+    Eatable& e3 = foodFactory.createEatable( "CheeseBurger" );
+    Hamburger& h2 = (Hamburger&)foodFactory.createEatable( "CheeseBurger" );
+    Hamburger& h3 = static_cast<Hamburger&>( foodFactory.createEatable( "Pizza Nutella" ) );
+    Hamburger& h4 = dynamic_cast<Hamburger&>( foodFactory.createEatable( "Hamburger Nutella" ) );
     //Hamburger& h5 = dynamic_cast<Hamburger&>( foodFactory.getEatable( "Pizza Nutella" ) );
     cout << endl;
     cout << "p1: " << p1.toJSON() << endl;

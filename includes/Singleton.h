@@ -41,12 +41,12 @@ class Singleton {
     ~Singleton();
 
     /*
-     * Note that the next two functions are not given bodies, thus any attempt
-     * to call them implicitly will return as compiler errors. This prevents
-     * accidental copying of the only instance of the class.
+     * The following two functions prevent accidental copying of the
+     * singleton instance of the class, disabling the copy constructor and
+     * the assignment operator '='.
      */
-    Singleton( const Singleton& orig );                     //disallow copy constructor
-    const Singleton &operator = ( const Singleton& orig );  //disallow assignment operator
+    Singleton( const Singleton& orig ) = delete;   // disable copy constructor
+    const Singleton &operator = ( const Singleton& orig ) = delete;  //disable assignment '='
 
     string name;
     static Singleton _singletonInstance;

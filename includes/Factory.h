@@ -10,7 +10,15 @@ class Hamburger;
 class Eatable;
 
 /**
- * @brief The Factory class
+ * @brief The FoodFactory class implements the Factory Design Pattern, which
+ * is useful for the creation of many different types of objects, all derived
+ * from a common base type.
+ * The Factory Method defines a method for creating the objects, which subclasses
+ * can then override to specify the derived type that will be created. Thus, at
+ * run time, the Factory Method can be passed a description of a desired object
+ * (e.g., a string read from user input) and return a base class pointer to a new
+ * instance of that object. The pattern works best when a well-designed interface
+ * is used for the base class, so there is no need to cast the returned object.
  */
 class FoodFactory {
 
@@ -21,13 +29,13 @@ class FoodFactory {
     /*
      * Concrete factory methods:
      */
-    Pizza& getPizza( string name, int diameter );
-    Hamburger& getHamburger( string name, bool vegan, int calories );
+    Pizza& createPizza( string name, int diameter );
+    Hamburger& createHamburger( string name, bool vegan, int calories );
 
     /*
      * Abstract Factory methods:
      */
-    Eatable& getEatable( string name );
+    Eatable& createEatable( string name );
 
   private:
     FoodFactory() : FoodFactory( "Factory" ) {}

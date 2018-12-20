@@ -1,4 +1,4 @@
-#include "singleton.h"
+#include "Singleton.h"
 
 
 Singleton::Singleton( string name ) : name( name ) {
@@ -20,13 +20,14 @@ Singleton Singleton::_singletonInstance;
 Singleton& Singleton::getInstance() {
     /*
      * Variation(B): lazy creation on first invocation of getInstance()
-     * AFTER entering main(); destructor is called BEFORE leaving main().
+     * AFTER entering main(); destructor is called AFTER leaving main().
      */
     //static Singleton _singletonInstance;
 
     /*
      * Variation(C): lazy creation on the heap with new(); destructor is
-     * NOT called and must explitely be invoked by delete *sigletonRef.
+     * NOT called and must explicitly be invoked with delete BEFORE
+     * leaving main().
      */
     //if( ptr==nullptr ) {
     //    ptr = new Singleton();
