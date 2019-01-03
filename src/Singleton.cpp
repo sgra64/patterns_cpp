@@ -13,7 +13,7 @@ Singleton::~Singleton() {
  * Variation(A): static creation program start BEFORE entering main();
  * destructor is called AFTER leaving main().
  */
-Singleton Singleton::_singletonInstance;
+//Singleton Singleton::_singletonInstance;
 //Singleton *Singleton::ptr = nullptr;      // used for Variation(C)
 
 
@@ -22,7 +22,7 @@ Singleton& Singleton::getInstance() {
      * Variation(B): lazy creation on first invocation of getInstance()
      * AFTER entering main(); destructor is called AFTER leaving main().
      */
-    //static Singleton _singletonInstance;
+    static Singleton _singletonInstance;
 
     /*
      * Variation(C): lazy creation on the heap with new(); destructor is
