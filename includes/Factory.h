@@ -74,13 +74,14 @@ class Pizza : public Eatable {
     friend FoodFactory;
   public:
     virtual string toJSON();
+    int getDiameter() { return diameter; }
 
   private:
     Pizza( string name ) : Pizza( name, 30 /*default*/ ) {}
     Pizza( string name, int diameter ) : Eatable( name, "Pizza    " ),
         diameter( diameter ) {}
 
-    int diameter;
+    const int diameter;
 };
 
 
@@ -88,6 +89,7 @@ class Hamburger : public Eatable {
     friend FoodFactory;
   public:
     virtual string toJSON();
+    int getCalories() { return calories; }
 
   private:
     Hamburger( string name ) : Hamburger( name, false, 1200 /*defaults*/ ) {}

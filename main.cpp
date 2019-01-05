@@ -13,10 +13,10 @@ extern void pubsubPlayground();
 
 int main( int /*argc*/, char* /*argv*/[] ) {
     cout << "------------------" << " Hello Patterns!" << "----------" << endl;
-    singletonPlayground();
+    //singletonPlayground();
     //factoryPlayground();
     //observerPlayground();
-    //pubsubPlayground();
+    pubsubPlayground();
 
     cout << "------------------" << " Leaving main(), bye." << "-----" << endl;
 }
